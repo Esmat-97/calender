@@ -1,0 +1,90 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .calendar-weekdays{
+            display: flex;
+            
+        }
+
+        .calendar-weekdays li{
+            margin-left:9;
+            
+        }
+
+        .calendar-dates{
+ display: flex;           
+ flex-wrap: wrap;
+width: 200;
+height: 100;
+        }
+        .moh{
+            width: 20;
+            height: 20;
+            background-color: aqua;
+            margin-left:8;
+        }
+    </style>
+</head>
+<body>
+<div class="calendar-container" style="margin-left: 200px;margin-top: 50px;padding: 20px;">
+    
+        <ul class="calendar-weekdays" style="list-style-type: none;">
+            <li>Su</li>
+            <li>Mo</li>
+            <li>Tu</li>
+            <li>We</li>
+            <li>Th</li>
+            <li>Fr</li>
+            <li>Sa</li>
+        </ul>
+        <ul class="calendar-dates"></ul>
+</div>
+
+    <script>
+  
+  function manipulate(year,month){
+
+	let dayone = new Date(year, month, 1).getDay();
+	let lastdate = new Date(year, month + 1, 0).getDate();
+
+  
+      let cal='';
+
+              for(let i=0;i<dayone;i++){
+             document.querySelector('.calendar-dates').innerHTML  +="<div class='moh'>.</div>";
+              }
+
+
+              for(let j=1;j<=lastdate;j++){
+          document.querySelector('.calendar-dates').innerHTML+=`<div class='moh'>${j}</div>`;
+
+           }   
+
+
+                                /*    */ 
+
+
+
+            let days=document.querySelectorAll('.moh');
+            console.log(days);
+
+            for( let day of days){
+            if(day.innerHTML == new Date().getDate()){
+               day.style.color='blue';
+               day.style.backgroundColor='yellow';
+            }
+            }
+        
+
+
+}
+
+
+manipulate(new Date().getFullYear(),new Date().getMonth());
+</script>
+
+</body>
+</html>
