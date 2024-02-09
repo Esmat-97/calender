@@ -1,7 +1,6 @@
-# calender 
-# online Clinic 
+# Calender 
 
-Welcome to my Online clinic! This project does amazing things and you'll love it.
+Welcome to my Calender! This project does amazing things and you'll love it.
 
 ## Installation
 
